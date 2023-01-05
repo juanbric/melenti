@@ -1,26 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
-import Head from "next/head";
+import { Center, HStack } from "@chakra-ui/react";
 
 export const AppBar = () => {
   return (
-    <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css?family=Exo&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <div className="appbar gap-8 px-8">
-        <Link href={"/"}>
-          Inicio
-        </Link>
-        <Link href={"/nosotros"}>Sobre nosotros</Link>
-        <Link href={"/servicios"}>Nuestros servicios</Link>
-        <Link href={"/blog"}>Blog</Link>
-        <Link href={"/contacto"}>Contacto</Link>
-      </div>
-    </>
+    <div className=" sticky top-0 bg-white border-b-[1px] py-2">
+      <Center>
+        <HStack className="grid grid-cols-2 gap-[800px] px-8 place-content-between">
+          <div>
+            <Link href={"/"} className="naranja">
+              <HStack>
+                <img src="/logo.svg" className="w-[25px] h-[25px]" /> <p>melenti</p>
+              </HStack>
+            </Link>
+          </div>
+          <div>
+            <Link href={"/descubre"} className="pr-4 verde">
+              Descubre
+            </Link>
+            <Link href={"/contacto"} className="naranja">
+              {" "}
+              Contacta
+            </Link>
+          </div>
+        </HStack>
+      </Center>
+    </div>
   );
 };
 
