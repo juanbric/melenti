@@ -6,9 +6,9 @@ export const AppBar = () => {
   return (
     <div className=" sticky top-0 bg-white border-b-[1px] py-2">
       <Center>
-        <HStack className="grid grid-cols-2 gap-[800px] px-8 place-content-between">
+        <HStack className="flex justify-between main">
           <div>
-            <Link href={"/"} className="naranja">
+            <Link href={"/"} className="naranja copy-bold">
               <HStack>
                 <img src="/logo.svg" className="w-[25px] h-[25px]" /> <p>melenti</p>
               </HStack>
