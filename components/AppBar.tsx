@@ -1,30 +1,57 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Center, HStack } from "@chakra-ui/react";
+import {
+  HStack,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
 
 export const AppBar = () => {
   return (
-    <div className=" sticky top-0 bg-white border-b-[1px] py-2">
-      <Center>
-        <HStack className="grid grid-cols-2 gap-[800px] px-8 place-content-between">
-          <div>
-            <Link href={"/"} className="naranja">
-              <HStack>
-                <img src="/logo.svg" className="w-[25px] h-[25px]" /> <p>melenti</p>
-              </HStack>
-            </Link>
+    <div className="sticky top-0 bg-white border-b-[0.00001px] border-[#a99ea7] py-2">
+      <div className="lg:flex lg:justify-center lg:items-center">
+        <div className="px-8 w-auto lg:w-[1130px]">
+          <div className="flex justify-between items-center">
+            <div>
+              <Link href={"/"}>
+                <HStack>
+                <div className="rounded-full p-3 bg-azul"/>
+                  <p className="header-small-bold vino">melenti</p>
+                </HStack>
+              </Link>
+            </div>
+            <div className="hidden lg:block">
+              <Link href={"/blog"} className="pr-8 header-tiny-bold azul">
+                Blog
+              </Link>
+              <Link href={"/contacto"} className="header-tiny-bold azul">
+                Contacta
+              </Link>
+            </div>
+            <div className="lg:hidden block">
+              <Menu>
+                <MenuButton
+                  as={IconButton}
+                  aria-label="Options"
+                  icon={<img src="/hamburguer.png" />}
+                  variant="white"
+                />
+                <MenuList>
+                  <MenuItem>
+                    <Link href={"/blog"}>Blog</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link href={"/contacto"}>Contacta</Link>
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </div>
           </div>
-          <div>
-            <Link href={"/descubre"} className="pr-4 verde">
-              Descubre
-            </Link>
-            <Link href={"/contacto"} className="naranja">
-              {" "}
-              Contacta
-            </Link>
-          </div>
-        </HStack>
-      </Center>
+        </div>
+      </div>
     </div>
   );
 };
