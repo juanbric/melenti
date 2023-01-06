@@ -1,5 +1,4 @@
-import { HStack } from "@chakra-ui/react";
-import emailjs from "emailjs-com";
+import emailjs from "emailjs-com"
 import { useState } from "react";
 import { SimpleModal } from "../components/SimpleModal";
 import Spacer from "../components/Spacer";
