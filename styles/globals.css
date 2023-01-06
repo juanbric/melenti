@@ -15,33 +15,66 @@
     font-family: "Montserrat";
     font-size: 60px;
   }
-
-  .sub-header {
-    font-family: "Lora";
-    font-size: 35px;
+  .header-medium {
+    font-family: "Montserrat";
+    font-size: 42px;
   }
-
-  .copy {
-    font-family: "Hind Madurai", sans-serif;
-    font-size: 18px;
-  }
-
-  .copy-bold {
+  .header-small-bold {
     font-family: "Montserrat";
     font-size: 24px;
     font-weight: 700;
   }
-
-  /* Colors */
-  .azul {
-    color: #132542;
+  .header-tiny-bold {
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 500;
   }
-
+  .sub-header {
+    font-family: "Lora";
+    font-size: 32px;
+  }
+  .sub-header-tiny {
+    font-family: "Lora";
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .copy {
+    font-family: "Hind Madurai", sans-serif;
+    font-size: 18px;
+  }
+  .copy-bold {
+    font-family: "Hind Madurai";
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  /* Text colors */
+  .azul {
+    color: #402f5e;
+  }
   .verde {
     color: #335964;
   }
+  .vino {
+    color: #a45c8c;
+  }
+  .gris {
+    color: #a99ea7;
+  }
 
-  .naranja {
-    color: #e58d35;
+  /* Background colors */
+  .bg-vino {
+    background-color:#a45c8c;
+  }
+  .bg-azul {
+    background-color:#402f5e;
+  }
+  .bg-gris {
+    background-color:#a99ea7;
+  }
+
+  /* Border radius */
+  .rounded-cool {
+    border-radius: 26px;
   }
 }

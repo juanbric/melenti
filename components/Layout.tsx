@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: any }) {
     <>
       <AppBar />
       <div className="lg:flex lg:justify-center lg:items-center">
-        <div className="px-8 w-auto lg:w-[960px] ">{children}</div>
+        <div className="px-8 w-auto lg:w-[1130px] ">{children}</div>
         </div>
       <Footer />
     </>

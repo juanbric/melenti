@@ -11,23 +11,23 @@ import {
 
 export const AppBar = () => {
   return (
-    <div className="sticky top-0 bg-white border-b-[1px] py-2">
+    <div className="sticky top-0 bg-white border-b-[0.00001px] border-[#a99ea7] py-2">
       <div className="lg:flex lg:justify-center lg:items-center">
-        <div className="px-8 w-auto lg:w-[960px]">
+        <div className="px-8 w-auto lg:w-[1130px]">
           <div className="flex justify-between items-center">
             <div>
-              <Link href={"/"} className="naranja">
+              <Link href={"/"}>
                 <HStack>
-                  <img src="/logo.svg" className="w-[25px] h-[25px]" />{" "}
-                  <p className="copy-bold">melenti</p>
+                <div className="rounded-full p-3 bg-azul"/>
+                  <p className="header-small-bold vino">melenti</p>
                 </HStack>
               </Link>
             </div>
             <div className="hidden lg:block">
-              <Link href={"/blog"} className="pr-4 azul">
+              <Link href={"/blog"} className="pr-8 header-tiny-bold azul">
                 Blog
               </Link>
-              <Link href={"/contacto"} className="azul">
+              <Link href={"/contacto"} className="header-tiny-bold azul">
                 Contacta
               </Link>
             </div>
