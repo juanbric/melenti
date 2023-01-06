@@ -13,7 +13,7 @@ export const AppBar = () => {
   return (
     <div className="sticky top-0 bg-white border-b-[0.00001px] border-[#a99ea7] py-2">
       <div className="lg:flex lg:justify-center lg:items-center">
-        <div className="px-8 w-auto lg:w-[1130px]">
+        <div className="px-4 lg:px-8 w-auto lg:w-[1130px]">
           <div className="flex justify-between items-center">
             <div>
               <Link href={"/"}>
@@ -39,9 +39,9 @@ export const AppBar = () => {
                   icon={<img src="/hamburguer.png" />}
                   variant="white"
                 />
-                <MenuList>
+                <MenuList minW='50px' className="azul">
                   <MenuItem>
-                    <Link href={"/blog"}>Blog</Link>
+                    <Link href={"/blog"} >Blog</Link>
                   </MenuItem>
                   <MenuItem>
                     <Link href={"/contacto"}>Contacta</Link>

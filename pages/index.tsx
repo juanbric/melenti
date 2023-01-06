@@ -12,7 +12,7 @@ export default function Home() {
         url={undefined}
         image={"/logo.png"}
       />
-      <div className="py-8 flex">
+      <div className="py-4 lg:py-8 flex">
         <HomeBanner />
       </div>
     </>
