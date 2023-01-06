@@ -1,11 +1,19 @@
 import Spacer from "../components/Spacer";
-import { VStack, Stack, HStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import Link from "next/link";
 
 const HomeBanner = () => {
+  const random = Math.floor(Math.random() * 4) + 1;
+
   return (
     <>
       <div className="lg:w-2/5">
+        <div className="md:hidden flex items-center justify-center">
+          <img
+            src={`/cover-${random}.svg`}
+            className="max-w-[270px] rounded-cool flex"
+          />
+        </div>
         <HStack className="header lg:pt-[150px]">
           <div className="rounded-full p-6 mt-1 bg-azul" />
           <div className="vino">melenti</div>
@@ -42,7 +50,7 @@ const HomeBanner = () => {
             />
           </div>
           <div className="pt-[80px]">
-            <img src="/cover.svg" className="max-w-[270px] rounded-cool" />
+            <img src="/cover-4.svg" className="max-w-[270px] rounded-cool" />
             <img
               src="/cover-2.svg"
               className="max-w-[270px] shadow-xl rounded-cool mt-8"

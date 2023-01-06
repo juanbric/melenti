@@ -5,7 +5,7 @@ import Spacer from "../components/Spacer";
 const PoliticaCookies = () => {
   return (
     <div className="py-4 lg:py-6">
-      <h1 className="header">Política de cookies</h1>
+      <h1 className="header-medium lg:header azul">Política de cookies</h1>
       <Spacer size={24} />
       <p className="copy">
         Una política de cookies es un documento que describe cómo se utilizan
@@ -14,11 +14,11 @@ const PoliticaCookies = () => {
         y almacenar información sobre el usuario y su uso del sitio web.
       </p>
       <Spacer size={24} />
-      <h2 className="sub-header">
+      <h2 className="sub-header gris">
         A continuación se presenta una política de cookies para el blog Melenti
       </h2>
       <Spacer size={24} />
-      <ul className="copy">
+      <ul className="copy azul">
         <li>
           {"\u2022  "}
           Melenti utiliza cookies para mejorar la experiencia del usuario y
@@ -52,7 +52,7 @@ const PoliticaCookies = () => {
         </li>
       </ul>
       <br />
-      <p className="copy">
+      <p className="copy azul">
         Si tienes alguna pregunta o preocupación sobre nuestra política de
         cookies, no dudes en ponerte en
         <Link href={"/contacto"}> contacto con nosotros.</Link>

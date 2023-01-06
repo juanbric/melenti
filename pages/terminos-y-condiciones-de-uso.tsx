@@ -5,14 +5,14 @@ import Spacer from "../components/Spacer";
 const TerminosDeUso = () => {
   return (
     <div className="py-4 lg:py-6">
-      <h1 className="header">Términos y condiciones de uso</h1>
+      <h1 className="header-medium lg:header azul">Términos y condiciones de uso</h1>
       <Spacer size={24} />
-      <h2 className="sub-header">
+      <h2 className="sub-header gris">
         A continuación se presentan los términos y condiciones de uso del blog
-        Melenti:
+        Melenti
       </h2>
       <Spacer size={24} />
-      <ul className="copy">
+      <ul className="copy azul">
         <li>
           {"\u2022  "}
           Melenti es un blog de salud mental y bienestar emocional que
@@ -60,7 +60,7 @@ const TerminosDeUso = () => {
         </li>
       </ul>
       <br />
-      <p className="copy">
+      <p className="copy azul">
         Si tienes alguna pregunta o preocupación sobre nuestros términos y
         condiciones de uso, no dudes en ponerte en
         <Link href={"/contacto"}> contacto con nosotros.</Link>

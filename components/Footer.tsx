@@ -1,11 +1,11 @@
-import { Center, HStack, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import Link from "next/link";
 
 export const Footer = () => {
   return (
     <footer className="sticky top-0 bg-white border-t-[0.1px] border-[#a99ea7] py-2">
       <div className="lg:flex lg:justify-center lg:items-center">
-        <div className="px-8 w-auto lg:w-[1130px]">
+        <div className="px-4 lg:px-8 w-auto lg:w-[1130px]">
           <Stack
             direction={["column", "row"]}
             spacing={4}

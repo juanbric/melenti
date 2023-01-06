@@ -5,14 +5,14 @@ import Spacer from "../components/Spacer";
 const PoliticaPrivacidad = () => {
   return (
     <div className="py-4 lg:py-6">
-        <h1 className="header">Política de privacidad</h1>
+        <h1 className="header-medium lg:header azul">Política de privacidad</h1>
         <Spacer size={24} />
-        <h2 className="sub-header">
+        <h2 className="sub-header gris">
           Para proteger la privacidad de nuestros lectores, en Melenti hemos
           desarrollado la siguiente política de privacidad
         </h2>
         <Spacer size={24} />
-        <ul className="copy">
+        <ul className="copy azul">
           <li>
             {"\u2022  "}
             Recopilamos solo la información necesaria para proporcionar una
@@ -53,7 +53,7 @@ const PoliticaPrivacidad = () => {
           </li>
           <br />
         </ul>
-        <p className="copy">
+        <p className="copy azul">
           Si tienes alguna pregunta o preocupación sobre nuestra política de
           privacidad, no dudes en ponerte en
           <Link href={"/contacto"}> contacto con nosotros.</Link>
