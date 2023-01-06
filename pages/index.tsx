@@ -13,15 +13,23 @@ export default function Home() {
         url={undefined}
         image={"/logo.png"}
       />
-      <p className="header">melenti</p>
-      <p className="sub-header">Vive con plenitud</p>
-      <p className="copy">
-        Blog especializado en salud mental y bienestar emocional. En este espacio encontrarás
-        recursos valiosos escritos por psicólogos profesionales con el objetivo
-        de ayudarte a superar diversas patologías mentales. Visita nuestro
-        sitio y descubre cómo podemos ayudarte a encontrar las mejores opciones
-        para ti en tu camino hacia una mente más sana y equilibrada.{" "}
-      </p>
+      <div>
+        <h1 className="header text-start naranja">melenti</h1>
+        <p className="sub-header">
+          Técnicas y herramientas para mejorar tu salud mental y
+          aumentar tu bienestar emocional en la vida cotidiana
+        </p>
+        <p className="copy">
+          Bienvenido a nuestro blog sobre salud mental y bienestar emocional.
+          Aquí, te ofrecemos consejos y soluciones prácticas para mejorar tu
+          equilibrio emocional y bienestar psicológico en todas las áreas de tu
+          vida. Desde ejercicios de respiración y meditación hasta técnicas
+          especializadas de autoayuda y herramientas de gestión del estrés, te
+          brindamos todo lo que necesitas para fortalecer tu mente y mejorar tu
+          calidad de vida. ¡Síguenos para aprender más y vivir una vida más
+          plena y satisfactoria!
+        </p>
+      </div>
       <Spacer size={24} />
     </VStack>
   );
