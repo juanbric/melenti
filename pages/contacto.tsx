@@ -60,7 +60,7 @@ export const ContactForm = () => {
         </label>
         <Spacer size={8} />
         <textarea
-          className="w-full bg-[#f5f5f5] rounded-[8px] p-1"
+          className="w-full p-2 bg-[#f5f5f5] outline-none rounded-[12px] copy azul"
           onKeyDown={handleKeyDown}
           style={{ resize: "none" }}
           name="user_message"
