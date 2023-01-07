@@ -20,7 +20,7 @@ export async function getStaticProps() {
   return {
     props: {
       blogs: res.items,
-      revalidate: 10,
+      revalidate: 1,
     },
   };
 }
@@ -29,6 +29,7 @@ export const Descubre = ({ blogs }: { blogs: any }) => {
   console.log(blogs);
   return (
     <VStack>
+
       <MetaTag
         title={"Blog | melenti"}
         description={
@@ -37,6 +38,7 @@ export const Descubre = ({ blogs }: { blogs: any }) => {
         url={undefined}
         image={"undefined"}
       />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {blogs?.map((article: any) => {
           const { title, slug } = article?.fields;
