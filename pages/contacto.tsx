@@ -11,13 +11,9 @@ export const ContactForm = () => {
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
-  const SERVICE_ID = "service_y9n1a9t";
-  const TEMPLATE_ID = "template_fy238wa";
-  const USER_ID = "y7AuvMWzBJ45y1jcI";
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
+    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, e.target, process.env.USER_ID).then(
       (result: any) => {
         console.log(result.text);
         setSuccessModal(true);
