@@ -9,6 +9,8 @@
   }
 }
 
+
+
 @layer components {
   /* Fonts */
   .header {
@@ -77,4 +79,15 @@
   .rounded-cool {
     border-radius: 26px;
   }
+
+  /* Tags */
+  
+  .markdown h2 {
+    font-family: "Lora";
+    font-size: 24px;
+    font-weight: 200;
+    color: #a99ea7;
+    margin-top: 24px;
+  }
+  
 }

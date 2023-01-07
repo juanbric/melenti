@@ -1,6 +1,8 @@
 import MetaTag from "../components/MetaTag";
 import { createClient } from "contentful";
 import Skeleton from "../components/Skeleton";
+import ReactMarkdown from 'react-markdown'
+
 
 // Store contentful API keys into a client variable
 const client = createClient({
@@ -32,7 +34,7 @@ export const getStaticPaths = async () => {
 };
 
 // Runs this function for every slug retrieved above
-export async function getStaticProps({ params } : { params: any }) {
+export async function getStaticProps({ params }: { params: any }) {
   const { items } = await client.getEntries({
     content_type: "blog",
     "fields.slug": params.slug,
@@ -56,28 +58,35 @@ export async function getStaticProps({ params } : { params: any }) {
 export const Slug = ({ blog }: { blog: any }) => {
   if (!blog) return <Skeleton />;
 
-  const { title, articleNormalText } = blog.fields;
-  const coverUrl = blog.fields.thumbnail.fields.file.url;
+  const {
+    title,
+    articleNormalText,
+    slug,
+    thumbnail,
+    description,
+    metaDescription,
+  } = blog.fields;
+  const thumbailUrl = thumbnail.fields.file.url;
   console.log("blog", blog);
   return (
-    <article>
+    <div className="py-4">
       <MetaTag
-        title={title + " | Zentra Dev"}
-        description={"remember to add description juaaaaaan"}
-        url={undefined}
-        image={"https:" + coverUrl}
+        title={title + " | melenti"}
+        description={metaDescription}
+        url={undefined + slug}
+        image={"https:" + thumbailUrl}
       />
-      <img
-        src={"https:" + coverUrl}
-        alt="Cover image"
-        className="object-cover h-[300px] w-full rounded-[22px]"
-      />
-      <h1 className=" mt-8">{title}</h1>
-      <p className=" my-6">{"remember to add description juaaaaaan"}</p>
-      <div className="mt-2">
-       {articleNormalText}
-      </div>
-    </article>
+      <article>
+        <img
+          src={"https:" + thumbailUrl}
+          alt="Cover image"
+          className="object-cover h-[300px] w-full rounded-[22px]"
+        />
+        <h1 className="mt-8 header-medium lg:header azul">{title}</h1>
+        <h3 className="sub-header gris my-6">{description}</h3>
+ <ReactMarkdown className="markdown">{articleNormalText}</ReactMarkdown>
+      </article>
+    </div>
   );
 };
 
