@@ -41,7 +41,7 @@ export const AppBar = () => {
                 />
                 <MenuList minW='50px' className="azul">
                   <MenuItem>
-                    <Link href={"/blog"} >Blog</Link>
+                    <Link href={"/descubre"} >Descubre</Link>
                   </MenuItem>
                   <MenuItem>
                     <Link href={"/contacto"}>Contacta</Link>
