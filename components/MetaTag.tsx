@@ -14,8 +14,7 @@ export const MetaTag = ({
   return (
     <Head>
       <title>{title}</title>
-      <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
-      <meta name="description" content={description} />
+     <meta name="description" content={description} />
       <meta
         name="keywords"
         content={
@@ -26,7 +25,7 @@ export const MetaTag = ({
       <meta name="revisit-after" content="21 days" />
       <meta name="creator" content="Juan Pablo Briceno" />
       <meta name="publisher" content="Zentra Dev" />
-      <link rel="icon" href="/logo.png" />
+      <link rel="icon" href="/circle.svg" />
       <meta http-equiv="content-language" content="es" />
       <meta name="twitter:site" content="" />
       <meta name="twitter:title" content={title} />
