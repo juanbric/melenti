@@ -5,15 +5,18 @@ import Link from "next/link";
 import { VStack } from "@chakra-ui/react";
 
 export async function getStaticProps() {
-    
-    // Store contentful API keys into a client variable
-    const client = createClient({
-        space: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-    });
+  // Store contentful API keys into a client variable
+  const client = createClient({
+    //@ts-ignore
+    space: process.env.CONTENTFUL_SPACE_ID,
+    //@ts-ignore
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
 
-    // Store blog content from our contentful space into a res variable
-    const res = await client.getEntries({ content_type: "blog" });
+  // Store blog content from our contentful space into a res variable
+  const res = await client.getEntries({ content_type: "blog" });
+
+  // Adding .items to res gives us the whole object of the blog content
 
   return {
     props: {
@@ -24,8 +27,8 @@ export async function getStaticProps() {
 }
 
 export const Blog = ({ blogs }: { blogs: any }) => {
-  console.log(blogs)
-    return (
+  console.log(blogs);
+  return (
     <VStack>
       <MetaTag
         title={"Blog | melenti"}

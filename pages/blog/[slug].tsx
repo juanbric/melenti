@@ -4,7 +4,9 @@ import Skeleton from "../../components/Skeleton";
 
 // Store contentful API keys into a client variable
 const client = createClient({
+  //@ts-ignore
   space: process.env.CONTENTFUL_SPACE_ID,
+  //@ts-ignore
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 });
 

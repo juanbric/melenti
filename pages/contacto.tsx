@@ -1,4 +1,4 @@
-import emailjs from "emailjs-com"
+import emailjs from "emailjs-com";
 import { useState } from "react";
 import { SimpleModal } from "../components/SimpleModal";
 import Spacer from "../components/Spacer";
@@ -13,16 +13,24 @@ export const ContactForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, e.target, process.env.USER_ID).then(
-      (result: any) => {
-        console.log(result.text);
-        setSuccessModal(true);
-      },
-      (error: any) => {
-        console.log(error.text);
-        // Error message
-      }
-    );
+    emailjs
+    .sendForm(
+        //@ts-ignore
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
+        e.target,
+        process.env.USER_ID
+      )
+      .then(
+        (result: any) => {
+          console.log(result.text);
+          setSuccessModal(true);
+        },
+        (error: any) => {
+          console.log(error.text);
+          // Error message
+        }
+      );
     e.target.reset();
   };
 
