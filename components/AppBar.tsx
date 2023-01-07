@@ -24,8 +24,8 @@ export const AppBar = () => {
               </Link>
             </div>
             <div className="hidden lg:block">
-              <Link href={"/blog"} className="pr-8 header-tiny-bold azul">
-                Blog
+              <Link href={"/descubre"} className="pr-8 header-tiny-bold azul">
+                Descubre
               </Link>
               <Link href={"/contacto"} className="header-tiny-bold azul">
                 Contacta

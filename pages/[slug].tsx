@@ -1,6 +1,6 @@
-import MetaTag from "../../components/MetaTag";
+import MetaTag from "../components/MetaTag";
 import { createClient } from "contentful";
-import Skeleton from "../../components/Skeleton";
+import Skeleton from "../components/Skeleton";
 
 // Store contentful API keys into a client variable
 const client = createClient({

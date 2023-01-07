@@ -17,7 +17,6 @@ export async function getStaticProps() {
   const res = await client.getEntries({ content_type: "blog" });
 
   // Adding .items to res gives us the whole object of the blog content
-
   return {
     props: {
       blogs: res.items,
@@ -26,7 +25,7 @@ export async function getStaticProps() {
   };
 }
 
-export const Blog = ({ blogs }: { blogs: any }) => {
+export const Descubre = ({ blogs }: { blogs: any }) => {
   console.log(blogs);
   return (
     <VStack>
@@ -43,7 +42,7 @@ export const Blog = ({ blogs }: { blogs: any }) => {
           const { title, slug } = article?.fields;
           const coverUrl = article?.fields.thumbnail.fields.file.url;
           return (
-            <Link key={article?.sys.id} href={"/blog/" + slug}>
+            <Link key={article?.sys.id} href={slug}>
               <BlogCard
                 title={title}
                 subTitle={"Remember to add subtitle in contentful"}
@@ -56,4 +55,4 @@ export const Blog = ({ blogs }: { blogs: any }) => {
     </VStack>
   );
 };
-export default Blog;
+export default Descubre;
