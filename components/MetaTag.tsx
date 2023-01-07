@@ -18,14 +18,14 @@ export const MetaTag = ({
       <meta
         name="keywords"
         content={
-          "agencia de desarrollo web, seo, las palmas de gran canaria, digitalización, presencia web, desarrollo software"
+          "x"
         }
       />
       <meta name="distribution" content="Global" />
       <meta name="revisit-after" content="21 days" />
       <meta name="creator" content="Juan Pablo Briceno" />
-      <meta name="publisher" content="Zentra Dev" />
-      <link rel="icon" href="/circle.svg" />
+      <meta name="publisher" content="melenti" />
+      <link rel="icon" href="https://svgshare.com/i/pNR.svg" />
       <meta http-equiv="content-language" content="es" />
       <meta name="twitter:site" content="" />
       <meta name="twitter:title" content={title} />

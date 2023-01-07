@@ -34,7 +34,7 @@ export const ContactForm = () => {
     <div className="py-4 lg:py-6">
       <h1 className="lg:header header-medium vino">contáctanos</h1>
       <Spacer size={12} />
-      <h2 className="header-small-bold gris">¡Podemos ayudarte!</h2>
+      <h2 className="header-small-bold azul">¡Podemos ayudarte!</h2>
       <form onSubmit={handleSubmit} className="copy azul">
         <h3></h3>
         <Spacer size={16} />
