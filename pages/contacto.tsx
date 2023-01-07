@@ -1,4 +1,4 @@
-import emailjs from "emailjs-com";
+import emailjs from "emailjs-com"
 import { useState } from "react";
 import { SimpleModal } from "../components/SimpleModal";
 import Spacer from "../components/Spacer";
@@ -11,26 +11,22 @@ export const ContactForm = () => {
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
+  const SERVICE_ID = "service_y9n1a9t";
+  const TEMPLATE_ID = "template_fy238wa";
+  const USER_ID = "y7AuvMWzBJ45y1jcI";
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    emailjs
-    .sendForm(
-        //@ts-ignore
-        process.env.SERVICE_ID,
-        process.env.TEMPLATE_ID,
-        e.target,
-        process.env.USER_ID
-      )
-      .then(
-        (result: any) => {
-          console.log(result.text);
-          setSuccessModal(true);
-        },
-        (error: any) => {
-          console.log(error.text);
-          // Error message
-        }
-      );
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
+      (result: any) => {
+        console.log(result.text);
+        setSuccessModal(true);
+      },
+      (error: any) => {
+        console.log(error.text);
+        // Error message
+      }
+    );
     e.target.reset();
   };
 
@@ -64,7 +60,7 @@ export const ContactForm = () => {
         </label>
         <Spacer size={8} />
         <textarea
-          className="w-full bg-[#f5f5f5] rounded-[8px] p-1"
+          className="w-full p-2 bg-[#f5f5f5] outline-none rounded-[12px] copy azul"
           onKeyDown={handleKeyDown}
           style={{ resize: "none" }}
           name="user_message"
