@@ -74,7 +74,7 @@ export const Slug = ({ blog }: { blog: any }) => {
       />
       <h1 className=" mt-8">{title}</h1>
       <p className=" my-6">{"remember to add description juaaaaaan"}</p>
-      <div className="">
+      <div className="mt-2">
        {articleNormalText}
       </div>
     </article>
