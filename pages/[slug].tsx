@@ -2,13 +2,14 @@ import MetaTag from "../components/MetaTag";
 import { createClient } from "contentful";
 import Skeleton from "../components/Skeleton";
 //@ts-ignore
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 //@ts-ignore
 import ReactMarkdown from "react-markdown";
 import { Stack } from "@chakra-ui/react";
 import Logo from "../components/Logo";
 import Spacer from "../components/Spacer";
 import ProgressBar from "../components/ProgressBar";
+import Schema from "../components/Schema";
 
 // Store contentful API keys into a client variable
 const client = createClient({
@@ -82,40 +83,13 @@ export const Slug = ({ blog }: { blog: any }) => {
 
   return (
     <div className="pb-4">
-      <Helmet>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "http://schema.org",
-              "@type": "BlogPosting",
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://melenti.vercel.app/"
-              },
-              "headline": "${title}",
-              "datePublished": "${date}",
-              "author": {
-                "@type": "Person",
-                "name": "Juan Pablo Briceno"
-              },
-              "image": "https:${thumbnailUrl}",
-              "articleBody": "${articleNormalText}",
-              "publisher": {
-                "@type": "Organization",
-                "name": "melenti",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://svgshare.com/i/pNR.svg"
-                }
-              },
-              "copyrightYear": 2023,
-              "inLanguage": "es-ES",
-              "description": "${metaDescription}"
-            }
-          `}
-        </script>
-      </Helmet>
-
+      <Schema
+        title={title}
+        date={date}
+        image={`https:${thumbnailUrl}`}
+        articleBody={articleNormalText}
+        description={metaDescription}
+      />
       <MetaTag
         title={title + " | melenti"}
         description={metaDescription}

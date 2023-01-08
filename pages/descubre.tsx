@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import BlogCard from "../components/BlogCard";
 import Link from "next/link";
 import { VStack } from "@chakra-ui/react";
+import Schema from "../components/Schema";
 
 export async function getStaticProps() {
   // Store contentful API keys into a client variable
@@ -29,14 +30,22 @@ export const Descubre = ({ blogs }: { blogs: any }) => {
   console.log(blogs);
   return (
     <VStack>
-
-      <MetaTag
-        title={"Blog | melenti"}
+      <Schema
+        title={"melenti | Blog de salud mental y bienestar emocional"}
+        date={undefined}
+        image={undefined}
+        articleBody={undefined}
         description={
-          "Ofrecemos una amplia gama de servicios a nuestros clientes. Desde diseño y desarrollo de sitios web personalizados hasta soluciones de comercio electrónico, estamos equipados para manejar todas sus necesidades de tecnología de la información."
+          "En nuestro blog de salud mental y bienestar emocional encontrarás estrategias efectivas para manejar tus sentimientos de inseguridad, ansiedad, tristeza y muchos más. Aprende a mejorar tu relación con tu cuerpo, aumentar tu energía y enfrentar tus miedos y dificultades en el trabajo y en las relaciones. ¡Visítanos para sentirte más seguro y en paz contigo mismo!"
+        }
+      />
+      <MetaTag
+        title={"Descubre | melenti"}
+        description={
+          "En nuestro blog de salud mental y bienestar emocional encontrarás estrategias efectivas para manejar tus sentimientos de inseguridad, ansiedad, tristeza y muchos más. Aprende a mejorar tu relación con tu cuerpo, aumentar tu energía y enfrentar tus miedos y dificultades en el trabajo y en las relaciones. ¡Visítanos para sentirte más seguro y en paz contigo mismo!"
         }
         url={undefined}
-        image={"undefined"}
+        image={undefined}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
