@@ -2,6 +2,8 @@ import MetaTag from "../components/MetaTag";
 import { createClient } from "contentful";
 import Skeleton from "../components/Skeleton";
 //@ts-ignore
+import { Helmet } from 'react-helmet';
+//@ts-ignore
 import ReactMarkdown from "react-markdown";
 import { Stack } from "@chakra-ui/react";
 import Logo from "../components/Logo";
@@ -63,7 +65,6 @@ export const Slug = ({ blog }: { blog: any }) => {
   console.log("blog", blog);
   if (!blog) return <Skeleton />;
 
-  
   const {
     title,
     articleNormalText,
@@ -81,6 +82,41 @@ export const Slug = ({ blog }: { blog: any }) => {
 
   return (
     <div className="pb-4">
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://melenti.vercel.app/"
+              },
+              "headline": "${title}",
+              "datePublished": "${date}",
+              "author": {
+                "@type": "Person",
+                "name": "Juan Pablo Briceno"
+              },
+              "image": "https:${thumbnailUrl}",
+              "articleBody": "${articleNormalText}",
+              "keywords": ["article", "blog", "writing"],
+              "publisher": {
+                "@type": "Organization",
+                "name": "melenti",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://svgshare.com/i/pNR.svg"
+                }
+              },
+              "copyrightYear": 2023,
+              "inLanguage": "es-ES",
+              "description": "${metaDescription}"
+            }
+          `}
+        </script>
+      </Helmet>
+
       <MetaTag
         title={title + " | melenti"}
         description={metaDescription}
