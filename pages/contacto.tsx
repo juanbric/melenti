@@ -1,5 +1,7 @@
-import emailjs from "emailjs-com"
+import emailjs from "emailjs-com";
 import { useState } from "react";
+import MetaTag from "../components/MetaTag";
+import Schema from "../components/Schema";
 import { SimpleModal } from "../components/SimpleModal";
 import Spacer from "../components/Spacer";
 
@@ -32,6 +34,23 @@ export const ContactForm = () => {
 
   return (
     <div className="py-4 lg:py-6">
+      <Schema
+        title={"melenti | Blog de salud mental y bienestar emocional"}
+        date={undefined}
+        image={undefined}
+        articleBody={undefined}
+        description={
+          "En nuestro blog de salud mental y bienestar emocional encontrarás estrategias efectivas para manejar tus sentimientos de inseguridad, ansiedad, tristeza y muchos más. Aprende a mejorar tu relación con tu cuerpo, aumentar tu energía y enfrentar tus miedos y dificultades en el trabajo y en las relaciones. ¡Visítanos para sentirte más seguro y en paz contigo mismo!"
+        }
+      />
+      <MetaTag
+        title={"Contacta | melenti"}
+        description={
+          "En nuestro blog de salud mental y bienestar emocional encontrarás estrategias efectivas para manejar tus sentimientos de inseguridad, ansiedad, tristeza y muchos más. Aprende a mejorar tu relación con tu cuerpo, aumentar tu energía y enfrentar tus miedos y dificultades en el trabajo y en las relaciones. ¡Visítanos para sentirte más seguro y en paz contigo mismo!"
+        }
+        url={undefined}
+        image={"undefined"}
+      />
       <h1 className="lg:header header-medium vino">contáctanos</h1>
       <Spacer size={12} />
       <h2 className="header-small-bold azul">¡Podemos ayudarte!</h2>
