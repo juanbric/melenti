@@ -1,8 +1,12 @@
 import MetaTag from "../components/MetaTag";
 import { createClient } from "contentful";
 import Skeleton from "../components/Skeleton";
-import ReactMarkdown from 'react-markdown'
-
+//@ts-ignore
+import ReactMarkdown from "react-markdown";
+import { Stack } from "@chakra-ui/react";
+import Logo from "../components/Logo";
+import Spacer from "../components/Spacer";
+import ProgressBar from "../components/ProgressBar";
 
 // Store contentful API keys into a client variable
 const client = createClient({
@@ -56,8 +60,10 @@ export async function getStaticProps({ params }: { params: any }) {
 }
 
 export const Slug = ({ blog }: { blog: any }) => {
+  console.log("blog", blog);
   if (!blog) return <Skeleton />;
 
+  
   const {
     title,
     articleNormalText,
@@ -65,26 +71,41 @@ export const Slug = ({ blog }: { blog: any }) => {
     thumbnail,
     description,
     metaDescription,
+    category,
   } = blog.fields;
-  const thumbailUrl = thumbnail.fields.file.url;
-  console.log("blog", blog);
+  const thumbnailUrl = thumbnail.fields.file.url;
+  const date = blog.sys.updatedAt;
+  const options = { year: "numeric", month: "short", day: "numeric" };
+  //@ts-ignore
+  const localDate = new Date(date).toLocaleDateString("es-ES", options);
+
   return (
-    <div className="py-4">
+    <div className="pb-4">
       <MetaTag
         title={title + " | melenti"}
         description={metaDescription}
         url={undefined + slug}
-        image={"https:" + thumbailUrl}
+        image={"https:" + thumbnailUrl}
       />
       <article>
+        <h1 className="mt-4 header-medium lg:header azul">{title}</h1>
+        <h3 className="description azul my-4">{description}</h3>
+        <Stack direction={["column", "row"]}>
+          <Logo />
+          <span className="copy gris pt-1 lg:px-6">{localDate}</span>
+          <span className="bg-gris rounded-full header-tiny text-white px-4 py-2 flex items-center justify-center">
+            {category}
+          </span>
+        </Stack>
+        <Spacer size={24} />
         <img
-          src={"https:" + thumbailUrl}
+          src={"https:" + thumbnailUrl}
           alt="Cover image"
           className="object-cover h-[300px] w-full rounded-[22px]"
         />
-        <h1 className="mt-8 header-medium lg:header azul">{title}</h1>
-        <h3 className="sub-header gris my-6">{description}</h3>
- <ReactMarkdown className="markdown">{articleNormalText}</ReactMarkdown>
+        <Spacer size={24} />
+        <ReactMarkdown className="markdown">{articleNormalText}</ReactMarkdown>
+        <ProgressBar />
       </article>
     </div>
   );
