@@ -100,7 +100,6 @@ export const Slug = ({ blog }: { blog: any }) => {
               },
               "image": "https:${thumbnailUrl}",
               "articleBody": "${articleNormalText}",
-              "keywords": ["article", "blog", "writing"],
               "publisher": {
                 "@type": "Organization",
                 "name": "melenti",
