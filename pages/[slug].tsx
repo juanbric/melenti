@@ -3,11 +3,10 @@ import { createClient } from "contentful";
 import Skeleton from "../components/Skeleton";
 //@ts-ignore
 import ReactMarkdown from "react-markdown";
-import { HStack, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import Logo from "../components/Logo";
 import Spacer from "../components/Spacer";
-import ReadingProgress from "../components/ReadingProgress";
-import React, { useEffect, useState } from "react";
+import ProgressBar from "../components/ProgressBar";
 
 // Store contentful API keys into a client variable
 const client = createClient({
@@ -64,7 +63,7 @@ export const Slug = ({ blog }: { blog: any }) => {
   console.log("blog", blog);
   if (!blog) return <Skeleton />;
 
-  const [readingProgress, setReadingProgress] = useState(0);
+  
   const {
     title,
     articleNormalText,
@@ -80,17 +79,6 @@ export const Slug = ({ blog }: { blog: any }) => {
   //@ts-ignore
   const localDate = new Date(date).toLocaleDateString("es-ES", options);
 
-  useEffect(() => {
-    function calculateReadingProgress() {
-      const progress =
-        window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      setReadingProgress(progress);
-    }
-
-    window.addEventListener("scroll", calculateReadingProgress);
-    return () => window.removeEventListener("scroll", calculateReadingProgress);
-  }, []);
-
   return (
     <div className="pb-4">
       <MetaTag
@@ -100,12 +88,6 @@ export const Slug = ({ blog }: { blog: any }) => {
         image={"https:" + thumbnailUrl}
       />
       <article>
-        <div className="progress-container">
-          <div
-            className="progress-indicator"
-            style={{ width: `${readingProgress * 100}%` }}
-          />
-        </div>
         <h1 className="mt-4 header-medium lg:header azul">{title}</h1>
         <h3 className="description azul my-4">{description}</h3>
         <Stack direction={["column", "row"]}>
@@ -123,6 +105,7 @@ export const Slug = ({ blog }: { blog: any }) => {
         />
         <Spacer size={24} />
         <ReactMarkdown className="markdown">{articleNormalText}</ReactMarkdown>
+        <ProgressBar />
       </article>
     </div>
   );
