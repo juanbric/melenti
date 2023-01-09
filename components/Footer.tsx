@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white border-t-[0.1px] border-[#a99ea7] py-4">
+    <footer className="bg-white border-t-[0.1px] border-[#dfd3dc] py-4">
       <div className="lg:flex lg:justify-center lg:items-center">
         <div className="px-4 lg:px-8 w-auto lg:w-[1130px]">
           <Stack

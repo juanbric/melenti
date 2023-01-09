@@ -12,7 +12,7 @@ import Logo from "./Logo";
 
 export const AppBar = () => {
   return (
-    <div className=" bg-white border-b-[0.00001px] border-[#a99ea7] py-1 lg:py-2">
+    <div className=" bg-white border-b-[0.00001px] border-[#dfd3dc] py-1 lg:py-2">
       <div className="lg:flex lg:justify-center lg:items-center">
         <div className="px-4 lg:px-8 w-auto lg:w-[1130px]">
           <div className="flex justify-between items-center">
