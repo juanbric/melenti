@@ -1,6 +1,7 @@
 import Spacer from "../components/Spacer";
 import { HStack } from "@chakra-ui/react";
 import Link from "next/link";
+import Image from "next/image";
 
 const HomeBanner = () => {
   const random = Math.floor(Math.random() * 4) + 1;
@@ -9,9 +10,12 @@ const HomeBanner = () => {
     <>
       <div className="lg:w-2/5">
         <div className="md:hidden flex items-center justify-center">
-          <img
+          <Image
+            width={270}
+            height={270}
             src={`/cover-${random}.svg`}
-            className="max-w-[270px] rounded-cool flex"
+            className="rounded-cool flex"
+            alt={""}
           />
         </div>
         <HStack className="header lg:pt-[150px]">
@@ -40,20 +44,35 @@ const HomeBanner = () => {
       <div className="hidden lg:block lg:pl-12 lg:w-3/5">
         <div className="grid grid-cols-2">
           <div className="pr-8">
-            <img
-              src="/cover-1.svg"
-              className="max-w-[270px] rounded-cool shadow-xl"
+            <Image
+              width={270}
+              height={270}
+              src={`/cover-1.svg`}
+              className="max-w-[270px] rounded-cool flex"
+              alt={""}
             />
-            <img
-              src="/cover-3.svg"
-              className="max-w-[270px] mt-16 rounded-cool"
+            <Image
+              width={270}
+              height={270}
+              src={`/cover-3.svg`}
+              className="max-w-[270px] rounded-cool flex"
+              alt={""}
             />
           </div>
           <div className="pt-[80px]">
-            <img src="/cover-4.svg" className="max-w-[270px] rounded-cool" />
-            <img
-              src="/cover-2.svg"
-              className="max-w-[270px] shadow-xl rounded-cool mt-8"
+            <Image
+              width={270}
+              height={270}
+              src={`/cover-2.svg`}
+              className="max-w-[270px] rounded-cool flex"
+              alt={""}
+            />
+            <Image
+              width={270}
+              height={270}
+              src={`/cover-4.svg`}
+              className="max-w-[270px] rounded-cool flex"
+              alt={""}
             />
           </div>
         </div>

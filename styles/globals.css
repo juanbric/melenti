@@ -13,11 +13,15 @@
   /* Fonts */
   .header {
     font-family: "Montserrat";
-    font-size: 60px;
+    font-size: 44px;
+    line-height: 66px;
+    font-weight: 700;
   }
   .header-medium {
     font-family: "Montserrat";
-    font-size: 42px;
+    font-size: 31px;
+    line-height: 47px;
+    font-weight: 700;
   }
   .header-small-bold {
     font-family: "Montserrat";
@@ -40,7 +44,13 @@
   }
   .copy {
     font-family: "Hind Madurai", sans-serif;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  .copy-tiny {
+    font-family: "Hind Madurai", sans-serif;
+    font-size: 14px;
   }
   .copy-bold {
     font-family: "Hind Madurai";
@@ -49,8 +59,9 @@
   }
   .description {
     font-family: "Hind Madurai", sans-serif;
-    font-style: italic;
     font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
   }
   
   /* Markdown */
@@ -58,7 +69,7 @@
     font-family: "Lora";
     font-size: 24px;
     font-weight: 200;
-    color: #a99ea7;
+    color: #402f5e;
     margin-top: 24px;
     margin-bottom: 4px;
   }
@@ -72,7 +83,9 @@
   }
   .markdown p {
     font-family: "Hind Madurai", sans-serif;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
     color: #402f5e;
   }
   .markdown a {
