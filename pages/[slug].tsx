@@ -2,14 +2,13 @@ import MetaTag from "../components/MetaTag";
 import { createClient } from "contentful";
 import Skeleton from "../components/Skeleton";
 //@ts-ignore
-import { Helmet } from "react-helmet";
-//@ts-ignore
 import ReactMarkdown from "react-markdown";
 import { Stack } from "@chakra-ui/react";
 import Logo from "../components/Logo";
 import Spacer from "../components/Spacer";
 import ProgressBar from "../components/ProgressBar";
 import Schema from "../components/Schema";
+import Image from "next/image";
 
 // Store contentful API keys into a client variable
 const client = createClient({
@@ -100,17 +99,23 @@ export const Slug = ({ blog }: { blog: any }) => {
         <h1 className="mt-4 header-medium lg:header azul">{title}</h1>
         <h3 className="description azul my-4">{description}</h3>
         <Stack direction={["column", "row"]}>
-          <Logo />
-          <span className="copy gris pt-1 lg:px-6">{localDate}</span>
-          <span className="bg-gris rounded-full header-tiny text-white px-4 py-2 flex items-center justify-center">
+          <div className="lg:pr-6">
+            <Logo />
+          </div>
+          <span className="bg-gris shadow-xl rounded-full header-tiny text-white px-4 py-2 flex items-center justify-center">
             {category}
+          </span>
+          <span className="copy-tiny gris pt-2 lg:pl-6">
+            Última actualización el {localDate}
           </span>
         </Stack>
         <Spacer size={24} />
-        <img
+        <Image
           src={"https:" + thumbnailUrl}
           alt="Cover image"
           className="object-cover h-[300px] w-full rounded-[22px]"
+          width={800}
+          height={300}
         />
         <Spacer size={24} />
         <ReactMarkdown className="markdown">{articleNormalText}</ReactMarkdown>
