@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const HomeBanner = () => {
-  const random = Math.floor(Math.random() * 4) + 1;
 
   return (
     <>
@@ -13,7 +12,7 @@ const HomeBanner = () => {
           <Image
             width={270}
             height={270}
-            src={`/cover-${random}.svg`}
+            src={`/cover-1.svg`}
             className="rounded-cool flex"
             alt={""}
           />
